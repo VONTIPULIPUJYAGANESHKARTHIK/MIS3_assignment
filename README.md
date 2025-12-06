@@ -1,30 +1,21 @@
 # MIS3_assignment ("Hybrid Machine Learning Model for Stock Trend Prediction")
 
-This project implements a machine learning pipeline to predict **stock price movement (up/down)** using:
+## Introduction
 
-- 🪟 Sliding Window Dataset Generation  
-- ⚡ Fast Fourier Transform (FFT)  
-- 🔻 Truncated SVD for Dimensionality Reduction  
-- 🤖 SVM (Support Vector Machine) Classification  
+The volatile and non-stationary nature of financial time-series data often leads to poor performance and overfitting in traditional machine learning models. The primary goal of this project is to develop a sophisticated, hybrid predictive framework that leverages advanced mathematical techniques to mitigate the effects of market noise and extract meaningful, periodic signals, thereby improving the prediction of the following day's stock market trend (either "up" or "down").
+
+We design a three-stage **Hybrid Pipeline** combining concepts from Signal Processing (Unit 2) and Linear Algebra (Unit 1) with Machine Learning:
+
+1. **Feature Extraction:** The **Discrete Fourier Transform (DFT)** is used to convert the time-domain price history into the frequency domain, effectively isolating underlying periodic market behaviors (low-frequency components) from random daily fluctuations (high-frequency noise).
+
+2. **Dimensionality Reduction:** The high-dimensional frequency features are compressed using **Singular Value Decomposition (SVD)** to obtain the optimal low-rank representation.
+
+3. **Classification:** The reduced features are then used to classify the next day's movement using a **Support Vector Machine (SVM)** classifier.
+
+Our hypothesis is that integrating these mathematical techniques will enhance the stability and generalization capabilities of the predictive model compared to models trained on raw price data.
+ 
 
 The goal is to transform stock closing prices into frequency-domain features and classify whether the price will rise on the next day.
-
----
-
-## 📌 Features
-
-✔ Converts time-series stock data into supervised learning format  
-✔ Uses **FFT** to capture frequency-based patterns  
-✔ Compresses feature space using **SVD**  
-✔ Classifies movement using **RBF-SVM**  
-✔ Achieves competitive accuracy depending on dataset  
-
----
-
-## 📂 Project Structure
-│── Stock_Prices.csv # Input dataset with 'Close' column
-│── MIS3_Assignment.py # Full machine learning pipeline
-│── README.md # Documentation (this file)
 
 ## Invidual Contributions
 | Name                     | ID               | Contributions                                      |
