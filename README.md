@@ -1,19 +1,9 @@
 # MIS3_assignment ("Hybrid Machine Learning Model for Stock Trend Prediction")
 
 ## Introduction
+Predicting financial markets is a challenging task due to their extreme volatility and constant fluctuations. When we train directly on raw price data, traditional machine-learning models frequently fail because they overfit. By creating a hybrid prediction pipeline that integrates mathematical tools from Unit 2, this project aims to address this problem. That is, first, we move the data from the time domain to the frequency domain using the \textbf{Fast Fourier Transform (FFT)}. Next, we reduce the dimensionality of the data by using \textbf{Singular Value Decomposition (SVD)}, retaining only the useful data, and finally, we use a \textbf{Support Vector Machine (SVM)} to determine whether the stock will trend "Up" or "Down" the following day.
 
-The volatile and non-stationary nature of financial time-series data often leads to poor performance and overfitting in traditional machine learning models. The primary goal of this project is to develop a sophisticated, hybrid predictive framework that leverages advanced mathematical techniques to mitigate the effects of market noise and extract meaningful, periodic signals, thereby improving the prediction of the following day's stock market trend (either "up" or "down").
-
-We design a three-stage **Hybrid Pipeline** combining concepts from Signal Processing (Unit 2) and Linear Algebra (Unit 1) with Machine Learning:
-
-1. **Feature Extraction:** The **Discrete Fourier Transform (DFT)** is used to convert the time-domain price history into the frequency domain, effectively isolating underlying periodic market behaviors (low-frequency components) from random daily fluctuations (high-frequency noise).
-
-2. **Dimensionality Reduction:** The high-dimensional frequency features are compressed using **Singular Value Decomposition (SVD)** to obtain the optimal low-rank representation.
-
-3. **Classification:** The reduced features are then used to classify the next day's movement using a **Support Vector Machine (SVM)** classifier.
-
-Our hypothesis is that integrating these mathematical techniques will enhance the stability and generalization capabilities of the predictive model compared to models trained on raw price data.
- 
+Overall, our hypothesis is that the classifier will perform better than models trained directly on noisy price data, because cleaning and refining the data first should give it a much clearer signal to learn from. 
 
 The goal is to transform stock closing prices into frequency-domain features and classify whether the price will rise on the next day.
 
