@@ -7,7 +7,7 @@ Overall, our hypothesis is that the classifier will perform better than models t
 
 The goal is to transform stock closing prices into frequency-domain features and classify whether the price will rise on the next day.
 
-## Invidual Contributions
+## Individual Contributions
 | Name                     | ID               | Contributions                                      |
 | ------------------------ | ---------------- | -------------------------------------------------- |
 | **P. Bhargav Ram**       | DL.AI.U4AID24146 | Sliding window, FFT integration                    |
